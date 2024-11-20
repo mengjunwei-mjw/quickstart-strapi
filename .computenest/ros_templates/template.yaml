@@ -281,7 +281,7 @@ Resources:
             wget '{{ computenest::file::mengjunwei-mjw_quickstart-strapi-docker-compose }}' -O /root/application/docker_compose.tar
             tar -xvf /root/application/docker_compose.tar -C /root/application
 
-            cat > /etc/systemd/system/docker-compose-app.service <<EOF
+            cat > /etc/systemd/system/quickstart-strapi.service <<EOF
             [Unit]
             Description=Docker Compose Application Service
             Requires=docker.service
@@ -299,8 +299,10 @@ Resources:
             WantedBy=multi-user.target
             EOF
 
+            systemctl enable quickstart-strapi
+
             
-            systemctl start docker-compose-app
+            systemctl start quickstart-strapi
           - RegionId:
               Ref: ALIYUN::Region
 Outputs: 
