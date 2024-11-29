@@ -1,0 +1,1 @@
+{"ServiceType":"private","AllowedRegions":["cn-beijing","cn-hangzhou"],"ArtifactSourceType":"DockerCompose","RepoName":"mengjunwei-mjw/quickstart-strapi","Arch":"EcsSingle","DockerComposeEnvPath":".env","RegionId":"cn-hangzhou","CustomParameters":"","DockerComposeYamlPath":"docker-compose.yaml"}
