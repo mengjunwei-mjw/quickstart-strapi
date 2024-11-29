@@ -228,12 +228,12 @@ Resources:
           - Ref: EcsVpc
           - Ref: VpcId
       SecurityGroupIngress:
-        - PortRange: 3306/3306
+        - PortRange: 5432/5432
           Priority: 1
           SourceCidrIp: 0.0.0.0/0
           IpProtocol: tcp
           NicType: internet
-        - PortRange: 5432/5432
+        - PortRange: 3306/3306
           Priority: 1
           SourceCidrIp: 0.0.0.0/0
           IpProtocol: tcp
@@ -298,7 +298,7 @@ Resources:
             Type=oneshot
             RemainAfterExit=yes
             WorkingDirectory=/root/application/docker_compose
-            ExecStart=/usr/bin/docker compose -f docker-compose.yaml up -d
+            ExecStart=/usr/bin/docker compose -f docker-compose-test.yaml up -d
             ExecStop=/usr/bin/docker compose down
             TimeoutStartSec=0
 
